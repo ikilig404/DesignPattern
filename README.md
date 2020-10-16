@@ -277,3 +277,57 @@
       }
   }
   ```
+  
+  * 枚举方式
+  ```java
+  /**
+   * 借助JDK1.5中添加的枚举来实现单例模式，不仅能避免多线程同步问题，
+   * 而且还能防止反序列化重新创建对象。这种方式是Effective Java作者
+   * Josh Bloch提倡的方式。
+   */
+  enum Singleton {
+      INSTANCE;  // 一个实例，保证是单例
+      public void sayOK() {
+          System.out.println("ok~");
+      }
+  }
+  ```
+* 单例模式的应用
+  * 在JDK中的使用, 用了饿汉式（静态常量）的实现方式   
+  ```java
+  public class Runtime {
+      private static Runtime currentRuntime = new Runtime();
+  
+      /**
+       * Returns the runtime object associated with the current Java application.
+       * Most of the methods of class <code>Runtime</code> are instance
+       * methods and must be invoked with respect to the current runtime object.
+       *
+       * @return  the <code>Runtime</code> object associated with the current
+       *          Java application.
+       */
+      public static Runtime getRuntime() {
+          return currentRuntime;
+      }  
+      /** Don't let anyone else instantiate this class */
+      private Runtime() {} 
+      /* ... */
+   }
+  
+  ```
+* 单例模式使用的场景：需要频繁地进行创建和销毁的对象、创建对象时耗时过多或耗费资源过多（即重量级对象），但又经常用到的对象
+工具类对象、频繁访问数据库或文件的对象（比如数据源、session工厂等）。  
+
+
+### 2. 工厂模式 （依赖倒转原则、开闭原则的体现）
+* 简单工厂模式（静态工厂模式）
+  * 简单工厂模式是属于创建型模式，是工厂模式的一种。简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。简单工厂模式是工厂模式家族中最简单实用的模式。
+  * 简单工厂模式：定义了一个创建对象的类，由这个类来封装实例化对象的行为。
+  * 在软件开发中，当我们会用到大量的创建某种、某类或者谋批对象时，就会用到工厂模式。
+* 工厂方法模式：定义了一个创建对象的抽象方法，由子类决定要实例化的类。工厂方法模式将对象的实例化推迟到子类。
+* 抽象工厂模式
+  * 抽象工厂模式：定义了一个interface用于创建相关或有依赖关系的对象簇，而无需指明具体的类。
+  * 抽象工厂模式可以将简单工厂模式和工厂方法模式进行整合。
+  * 从设计层面看，抽象工厂模式就是对简单工厂模式的改进（或者称为进一步的抽象）。
+  * 将工厂抽象成两层，AbsFactory（抽象工厂）和具体实现的工厂子类。程序员可以根据创建对象类型使用对应的工厂子类。这样将单个的简单工厂类变成了工厂簇，更利于代码的维护和扩展。
+* 工厂模式在JDK中的使用： Calendar 类

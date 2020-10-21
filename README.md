@@ -362,4 +362,16 @@
 * 原型模式在Spring中的应用：创建bean时选择scope=\"prototype\"。
 
 ### 4. 建造者模式
-* [参考博客](https://zhuanlan.zhihu.com/p/58093669)
+* [参考博客1](https://zhuanlan.zhihu.com/p/58093669)
+* [参考博客2](http://m.biancheng.net/view/1354.html)
+* 建造者模式在StringBuilder中的使用，不太符合标准的建造者模式，但都是正常的，每个人对设计模式的理解都有偏差。
+
+### 5. 适配器模式
+* [参考博客](http://m.biancheng.net/view/1361.html)
+* 适配器模式在Spring MVC中的HandlerAdapter的使用。
+
+### 6. 桥接模式
+* [参考博客](http://m.biancheng.net/view/1364.html)
+* 桥接模式在JDBC中的使用。
+
+### 7. 装饰者模式

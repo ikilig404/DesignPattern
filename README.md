@@ -375,3 +375,22 @@
 * 桥接模式在JDBC中的使用。
 
 ### 7. 装饰者模式
+* [参考博客](http://m.biancheng.net/view/1366.html)
+* 装饰模式主要包含以下角色:
+  * 抽象构件（Component）角色：定义一个抽象接口以规范准备接收附加责任的对象。
+  * 具体构件（ConcreteComponent）角色：实现抽象构件，通过装饰角色为其添加一些职责。
+  * 抽象装饰（Decorator）角色：继承抽象构件，并包含具体构件的实例，可以通过其子类扩展具体构件的功能。
+  * 具体装饰（ConcreteDecorator）角色：实现抽象装饰的相关方法，并给具体构件对象添加附加的责任。
+* 装饰模式在IO源码中的应用。
+
+### 8. 组合模式
+* [参考博客](http://m.biancheng.net/view/1373.html)
+
+### 9. 外观模式
+* [参考博客](http://m.biancheng.net/view/1369.html)
+
+### 10. 享元模式
+* [参考博客](http://m.biancheng.net/view/1371.html)
+* 享元模式在Integer.valuesOf()中的应用，要在[-128, 127]范围内。
+
+
